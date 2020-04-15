@@ -1,0 +1,37 @@
+UNIVERSIDAD POLITECNICA SALESIANA
+NOMBRE: JESSICA ÑAUTA
+CARRERA: INGENIERIA DE SISTEMAS
+
+
+*************************************************************
+------------SERIE FIBONASSI----------------
+
+(deffunction fibonassi(?num)
+    (if (or (= ?num 0) (= ?num 1)) then
+        ?num
+    else 
+        (+ (fibonassi(- ?num 1)) (fibonassi(- ?num 2))))
+)
+
+(printout t (fibonassi ?x) crlf)
+(printout t (fibonassi 12) crlf)
+
+
+*************************************************************
+------------NUMEROS PRIMOS----------------
+
+(deffunction numeroPrimo(?num ?div)
+(if (< (/ ?num 2) ?div)then 
+(printout t "SI ES UN NUMERO PRIMO!!!" )
+else
+(if (= (mod ?num ?div) 0)then
+(printout t "NO ES UN NUMERO PRIMO!!!" )
+else
+(return (numeroPrimo ?num (+ ?div 1)))
+)
+)
+)
+
+
+(printout t (numeroPrimo 17 2) crlf)
+(printout t (numeroPrimo 24 2) crlf)
